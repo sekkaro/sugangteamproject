@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Usercourse">
+	<insert id="insertUsercourse">
+		insert into user_course (userid, courseid, status, note)
+		values
+		(#{userid} , #{courseid} , #{status}, #{note})
+	</insert>
+	<select id="getUsercourseList" resultType="usercourse">
+		select * from user_course where
+		userid=#{userid} order
+		by id desc
+	</select>
+</mapper>
